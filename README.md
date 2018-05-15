@@ -1,5 +1,5 @@
 # reboot-router
-Reboot TP-LINK 300 Wireless N Router
+Reboots TP-LINK 300 Wireless N Router
 
 ## Setup
     git clone https://github.com/namannehra/reboot-router
