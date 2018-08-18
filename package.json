@@ -1,11 +1,4 @@
 {
-    "name": "reboot-router",
-    "version": "1.0.0",
-    "description": "Reboots TP-LINK 300 Wireless N Router",
-    "main": "index.js",
-    "repository": "github:namannehra/reboot-router",
-    "author": "Naman Nehra <naman.nehra98@gmail.com>",
-    "license": "MIT",
     "dependencies": {
         "btoa": "^1.2.1",
         "md5": "^2.2.1"
