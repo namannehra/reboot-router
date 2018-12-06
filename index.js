@@ -7,10 +7,15 @@ const md5 = require('md5')
 const hostname = '192.168.0.1'
 const [username, password] = process.argv.slice(2)
 
+// [DEP0018]
+process.on('unhandledRejection', error => {
+    throw error
+})
+
 const cookie = (() => {
-    const passHash = md5(password)
-    const auth = `Basic ${btoa(`${username}:${passHash}`)}`
-    const cookie = `Authorization=${escape(auth)};path=/`
+    const passwordHash = md5(password)
+    const authorization = `Basic ${btoa(`${username}:${passwordHash}`)}`
+    const cookie = `Authorization=${escape(authorization)};path=/`
     return cookie
 })()
 
@@ -70,8 +75,3 @@ const reboot = () => getRebootPath().then(rebootPath => new Promise((resolve, re
 }))
 
 reboot()
-
-// [DEP0018]
-process.on('unhandledRejection', error => {
-    throw error
-})
